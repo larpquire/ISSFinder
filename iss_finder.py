@@ -3,6 +3,7 @@ from datetime import datetime
 from time import sleep
 
 import requests
+from requests.exceptions import RequestException
 from pytz import timezone
 
 WAIT_TIME = 10    # seconds between consecutive http requests
@@ -59,6 +60,9 @@ def main():
             print 30*'-'
             sleep(WAIT_TIME)
         except KeyboardInterrupt:
+            break
+        except RequestException as r:
+            print '\a%s' % r
             break
 
 
