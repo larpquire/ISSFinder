@@ -52,7 +52,7 @@ def main():
                     timestamp.astimezone(timezone('Asia/Manila')),
                     payload['lat'],
                     payload['lon'],
-                    get_country(payload)
+                    get_country(payload).encode('utf-8', 'ignore')
                 )
             else:
                 print 'No data available at this time.'
