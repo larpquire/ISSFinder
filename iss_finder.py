@@ -24,7 +24,7 @@ def get_country(payload):
             country = res['address']['country']
             
     except:
-        country = 'Unable to locate country'
+        country = 'Unable to identify country'
     
     return country
 
@@ -48,7 +48,7 @@ def main():
                 )
                 payload['lat'] = res['iss_position']['latitude']
                 payload['lon'] = res['iss_position']['longitude']
-                print '%s\nCoordinates: (%f, %f)\nAbove: %s' % (
+                print '%s\nCoordinates: (%f, %f)\nOver: %s' % (
                     timestamp.astimezone(timezone('Asia/Manila')),
                     payload['lat'],
                     payload['lon'],
