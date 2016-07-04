@@ -36,7 +36,12 @@ def main():
     """
     iss_pos_url = 'http://api.open-notify.org/iss-now.json'
     email = sys.argv[1] if len(sys.argv) > 1 else None
-    payload = {'format': 'json', 'email': email, 'zoom': 0}
+    payload = {
+        'format': 'json',
+        'email': email,
+        'zoom': 0,
+        'accept-language': 'en'
+    }
     
     while True:
         try:
